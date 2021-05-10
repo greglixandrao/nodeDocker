@@ -1,0 +1,19 @@
+version: "3"
+services:
+  node-app:
+    build:
+      context: .
+      args:
+        NODE_ENV: development
+    volumes:
+      - ./:/app #bind mounts
+      - /app/node_modules #Anonymous Volumes
+    environment:
+      - NODE_ENV=development
+      - MONGO_USER=admin
+      - MONGO_PASSWORD=1234
+    command: npm run dev
+  mongo:
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=1234

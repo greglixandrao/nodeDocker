@@ -42,6 +42,7 @@ const connectWithRetry = () => {
 
 connectWithRetry();
 
+app.enable("trust proxy");
 app.use(
   session({
     store: new RedisStore({ client: redisClient }),
@@ -58,8 +59,9 @@ app.use(
 
 app.use(express.json());
 
-app.get("/", (req, res) => {
+app.get("/api/v1", (req, res) => {
   res.send("<h2>Hello Docker Node, Express and Mongo!!</h2>");
+  console.log("Hello Nginx");
 });
 
 app.use("/api/v1/posts", postRouter);

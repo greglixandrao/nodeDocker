@@ -63,7 +63,7 @@ app.use(express.json());
 
 app.get("/api/v1", (req, res) => {
   res.send(
-    "<h2>Hello Docker Node, Express, Mongo, Redis and Nginx from Ubuntu!!</h2>"
+    "<h2>Hello Docker Node, Express, Mongo, Redis and Nginx from Digital Ocean!!</h2>"
   );
   console.log("Hello Nginx");
 });

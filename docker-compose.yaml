@@ -9,7 +9,7 @@ services:
 
   node-app:
     build: .
-    # image: greglixandrao/nodedocker-app
+    image: greglixandrao/nodedocker-app
     environment:
       - PORT=3000
     depends_on:
